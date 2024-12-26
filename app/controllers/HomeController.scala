@@ -1,5 +1,7 @@
 package controllers
 
+import auth.Auth0Action
+
 import javax.inject._
 import play.api.libs.json.{JsObject, Json}
 import play.api.mvc._
@@ -8,7 +10,7 @@ import play.api.mvc._
  * This controller creates an `Action` to handle HTTP requests to the application's home page.
  */
 @Singleton
-class HomeController @Inject() (val controllerComponents: ControllerComponents)
+class HomeController @Inject() (val controllerComponents: ControllerComponents, auth0Action: Auth0Action)
     extends BaseController {
 
   private type QueryParams = Map[String, Seq[String]]
@@ -69,4 +71,8 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents)
   // [GET] /test
   def testHandler(): Action[AnyContent] =
     Action { implicit request: Request[AnyContent] => getTestHandlersResponse(request.queryString) }
+
+  // [GET] /protected-test
+  def testProtectedHandler(): Action[AnyContent] =
+    auth0Action { implicit request: Request[AnyContent] => getTestHandlersResponse(request.queryString) }
 }
