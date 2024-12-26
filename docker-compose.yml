@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  scala-api:
+    hostname: play-scala-api
+    container_name: play-scala-api
+    env_file:
+      - .env
+    build: .
+    volumes:
+      - .:/app
+      - ./.ivy2:/root/.ivy2
+      - ./.sbt:/root/.sbt
+    ports:
+      - 9000:9000
+    stdin_open: true

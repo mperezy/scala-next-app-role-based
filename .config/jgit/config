@@ -1,0 +1,3 @@
+[filesystem "GraalVM Community|22.0.1|overlay"]
+	timestampResolution = 2041 nanoseconds
+	minRacyThreshold = 1906 microseconds

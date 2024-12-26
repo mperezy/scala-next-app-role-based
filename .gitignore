@@ -1,0 +1,93 @@
+# Logs
+logs/
+*.log
+*.out
+*.err
+
+# Play Framework specific
+target/
+project/target/
+project/project/
+
+# Play Evolutions
+conf/evolutions/*/insert.sql
+conf/evolutions/*/update.sql
+conf/evolutions/*/delete.sql
+conf/evolutions/*/create.sql
+
+# SBT specific
+.cache/
+lib_managed/
+src_managed/
+.DS_Store
+.ensime
+.ensime_cache/
+*.class
+*.pyc
+*.tmp
+*.bak
+*.swp
+.ivy2
+.sbt
+.g8
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# VSCode
+.vscode/
+.vscode-*
+
+# Operating System files
+Thumbs.db
+.DS_Store
+
+# Environment Variables
+.env
+.envrc
+
+# Docker
+docker-compose.override.yml
+*.env
+*.log
+*.pid
+
+# Scala-specific
+*.class
+*.log
+*.lock
+.scala-build/
+*.sbt~
+
+# Test reports
+test-reports/
+test-output/
+
+# Build tools
+/.bloop
+/.metals
+/.ammonite
+
+# Dependencies
+lib/
+dependency-reduced-pom.xml
+
+# Generated files
+dist/
+conf/application.secret
+conf/routes/*
+conf/*.db
+
+# Miscellaneous
+.idea_modules/
+.metals/
+.history/
+.cache/
+
+# Production files
+/running.pid
+/path/to/production/file.txt
